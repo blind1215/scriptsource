@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>숫자 맞추기 게임</h3>
+    <p>
+      이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다. 숫자는 1~100사이에
+      있습니다.
+    </p>
+    <div>
+      <label for="">숫자</label>
+      <input type="text " name="num1" size="5" />
+      <input type="button" value="확인" onclick="guess()" />
+    </div>
+    <div>
+      <label for="">추측횟수</label>
+      <input type="text" name="count" readonly />
+    </div>
+    <div>
+      <label for="">힌트</label>
+      <input type="text" name="hint" readonly />
+    </div>
+  </body>
+  <script>
+    let nGuess = 0; //추측횟수
+    const random = Math.floor(Math.random() * 100) + 1; //1~100사이 임의 숫자
+
+    function guess() {
+      //사용자가 입력한 값 가져오기
+      var num1 = parseInt(document.querySelector("[name='num1']").value);
+
+      nGuess++; //추측횟수 증가
+      var result = "";
+      if (random == num1) {
+        //사용자의 입력값이 정확히 일치하면 "정답입니다"
+        result = "정답입니다.";
+        // 버튼을 비활성화
+        document.querySelector("[type='button']").disabled = "true";
+      } else if (random > num1) {
+        //사용자의 입력값이 더 작으면 "추측값이 작습니다."
+        result = " 추측값이 작습니다.";
+      } else {
+        //사용자의 입력값이 더 많으면 "추측값이 많습니다."
+        result = "추측값이 많습니다.";
+      }
+
+      //추측횟수 input 에 보여주기
+      document.querySelector("[name='count']").value = nGuess;
+
+      //결과 input에 보여주기
+      document.querySelector("[name='hint']").value = result;
+    }
+  </script>
+</html>

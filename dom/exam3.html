@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>The Light Bulb</h2>
+    <input type="button" value="Turn on the light" onclick="on()" />
+    <img src="pic_bulboff.gif" alt="" />
+    <input type="button" value="Trun off the light" onclick="off()" />
+  </body>
+  <script>
+    let img = document.querySelector("img");
+    function on() {
+      img.src = "pic_bulbon.gif";
+    }
+    function off() {
+      img.src = "pic_bulboff.gif";
+    }
+  </script>
+</html>

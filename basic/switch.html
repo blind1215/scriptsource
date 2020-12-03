@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let kor = Number(prompt("당신의 국어 점수는?"));
+      let eg = Number(prompt("당신의 수점수는?"));
+      let math = Number(prompt("당신의 수학점수는?"));
+
+      let avg = (kor + eg + math) / 3;
+
+      document.write("당신의 평균은" + avg + "이며 등급은");
+
+      switch (parseInt(avg / 10)) {
+        case 9:
+          document.write("A");
+          break;
+        case 8:
+          document.write("B");
+          break;
+        case 7:
+          document.write("C");
+          break;
+        case 6:
+          document.write("D");
+          break;
+        default:
+          document.write("F");
+      }
+    </script>
+  </body>
+</html>
